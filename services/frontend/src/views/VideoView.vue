@@ -152,7 +152,7 @@ export default {
     },
     computed: {
         ...mapStores(useUserStore)
-    }, beforeUnmount() { document.title = 'Urfube'; }
+    }, beforeUnmount() { document.title = 'УрФУ'; }
 }
 </script>
 
@@ -174,8 +174,8 @@ export default {
                         'subscriber' }}</p>
                 </div>
                 <button v-if="!this.subscribed" class="btn btn-light rounded-pill"
-                    @click="toggleSubscription">Subscribe</button>
-                <button v-else class="btn btn-secondary rounded-pill" @click="toggleSubscription">Unsubscribe</button>
+                    @click="toggleSubscription">Подписаться</button>
+                <button v-else class="btn btn-secondary rounded-pill" @click="toggleSubscription">Отписаться</button>
             </div>
             <button id="likeBtn" @click="toggleLike"
                 class="btn d-flex flex-row align-items-center rounded-pill btn__like"><svg
@@ -198,8 +198,8 @@ export default {
             <div>
                 <textarea v-model='comment' class='form-control mb-2 text-body' placeholder='Add comment...'></textarea>
                 <div class='mb-2'>
-                    <button class='btn btn-danger me-2' @click='cancelComment'>Cancel</button>
-                    <button class='btn btn-dark' @click='publishComment'>Comment</button>
+                    <button class='btn btn-danger me-2' @click='cancelComment'>Отмена</button>
+                    <button class='btn btn-dark' @click='publishComment'>Комментарий</button>
                 </div>
             </div>
             <div id="comment" class='border rounded p-2 mb-2' v-for='comment in comments' :key='comment.id'
@@ -216,8 +216,8 @@ export default {
                     <textarea class='form-control mb-2 text-body' placeholder='Add comment...'
                         :id="'text' + comment.id"></textarea>
                     <div class='mb-2'>
-                        <button class='btn btn-danger me-2' @click='cancelEdit' :id="comment.id">Cancel</button>
-                        <button class='btn btn-dark' @click='sendEdit' :id="comment.id">Edit</button>
+                        <button class='btn btn-danger me-2' @click='cancelEdit' :id="comment.id">Отмена</button>
+                        <button class='btn btn-dark' @click='sendEdit' :id="comment.id">Изменить</button>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -229,8 +229,8 @@ export default {
                                 d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
                         </svg></button>
                     <ul class="dropdown-menu">
-                        <li><button @click="editComment" class="dropdown-item" href="#" :id="comment.id">Edit</button></li>
-                        <li><button @click="deleteComment" class="dropdown-item" href="#" :id="comment.id">Delete</button>
+                        <li><button @click="editComment" class="dropdown-item" href="#" :id="comment.id">Изменить</button></li>
+                        <li><button @click="deleteComment" class="dropdown-item" href="#" :id="comment.id">Удалить</button>
                         </li>
                     </ul>
                 </div>

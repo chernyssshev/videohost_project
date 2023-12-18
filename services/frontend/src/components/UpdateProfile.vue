@@ -56,7 +56,7 @@ export default {
                     @change="changeProfile" id="profileFile" name="profile" accept=".jpg"
                     :class="{ 'is-invalid': v$.profile.$error }">
                 <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04"
-                    @click="uploadProfile">Upload</button>
+                    @click="uploadProfile">Загрузить</button>
             </div>
         </div>
     </form>

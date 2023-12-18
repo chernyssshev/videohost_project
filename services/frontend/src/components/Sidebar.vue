@@ -21,17 +21,17 @@ export default {
     <div class="d-flex flex-column flex-shrink-0 text-bg-dark sidenav" :class="{ active: active }">
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'main' }">Home</RouterLink>
+                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'main' }">Главная</RouterLink>
             </li>
             <li class="nav-item">
-                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'history' }">History</RouterLink>
+                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'history' }">История</RouterLink>
             </li>
             <li class="nav-item">
-                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'liked_videos' }">Liked videos
+                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'liked_videos' }">Понравилось
                 </RouterLink>
             </li>
             <li class="nav-item">
-                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'subscriptions' }">Subscriptions
+                <RouterLink @click="closeSidebar" class="nav-link text-white" :to="{ name: 'subscriptions' }">Подписки
                 </RouterLink>
             </li>
         </ul>

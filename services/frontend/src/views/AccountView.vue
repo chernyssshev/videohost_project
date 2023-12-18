@@ -62,7 +62,7 @@ export default {
     computed: {
         ...mapStores(useUserStore)
     }, beforeUnmount() {
-        document.title = 'Urfube';
+        document.title = 'УрФУ';
     }
 }
 </script>
@@ -78,24 +78,24 @@ export default {
                     <p class="text-secondary">{{ formatViews(this.videosCount).replace('view', 'video') }}</p>
                 </div>
                 <button v-if="!this.subscribed" class="btn btn-light rounded-pill align-self-start"
-                    @click="toggleSubscription">Subscribe</button>
+                    @click="toggleSubscription">Подписаться</button>
                 <button v-else class="btn btn-secondary rounded-pill align-self-start"
-                    @click="toggleSubscription">Unsubscribe</button>
+                    @click="toggleSubscription">Отписаться</button>
             </div>
 
         </div>
         <ul v-if="channel === userStore.username" class="nav nav-underline justify-content-center" data-bs-theme="dark">
             <li class="nav-item">
                 <a class="nav-link text-secondary" :class="view === 'videos' ? 'active' : ''" @click.prevent="changeView" href=""
-                    id="videos">Videos</a>
+                    id="videos">Видео</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" :class="view === 'upload' ? 'active' : ''" @click.prevent="changeView" href=""
-                    id="upload">Upload Video</a>
+                    id="upload">Загрузка видео</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" :class="view === 'update' ? 'active' : ''" @click.prevent="changeView" href=""
-                    id="update">Update profile picture</a>
+                    id="update">Обновить аватар</a>
             </li>
         </ul>
         <VideoUpload v-if="view === 'upload'" />

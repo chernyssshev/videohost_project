@@ -93,7 +93,7 @@ export default {
                 <div class="form-floating">
                     <textarea type="textarea" id="description" v-model.trim="description" class="form-control mb-2 "
                         :class="{ 'is-invalid': v$.description.$error }" placeholder="description"></textarea>
-                    <label for="description" class="mb-2 ">Description </label>
+                    <label for="description" class="mb-2 ">Описание </label>
                 </div>
                 <div v-for="(error, index) of v$.video.$errors" :key="index">
                     <div class="text-danger mb-2"><span>{{ error.$message }}</span></div>
@@ -106,7 +106,7 @@ export default {
                         @change="changeImage" id="imageFile" name="imageFile" accept=".jpg"
                         :class="{ 'is-invalid': v$.image.$error }">
                     <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04"
-                        @click="uploadVideo">Upload</button>
+                        @click="uploadVideo">Загрузить</button>
                 </div>
             </div>
         </form>

@@ -39,7 +39,7 @@ export default {
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                     </svg>
                 </button>
-                <RouterLink class="navbar-brand" :to="{ name: 'main' }">Urfube</RouterLink>
+                <RouterLink class="navbar-brand" :to="{ name: 'main' }">Уральский федеральный университет</RouterLink>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -52,22 +52,22 @@ export default {
                                 {{ userStore.username }}</RouterLink>
                         </li>
                         <li @click="logout" class="nav-item">
-                            <RouterLink class="nav-link" :to="{ name: 'main' }">Logout</RouterLink>
+                            <RouterLink class="nav-link" :to="{ name: 'main' }">Выйти</RouterLink>
                         </li>
                     </template>
                     <template v-else>
                         <li class="nav-item">
-                            <RouterLink class="nav-link" :to="{ name: 'login' }">Login</RouterLink>
+                            <RouterLink class="nav-link" :to="{ name: 'login' }">Логин</RouterLink>
                         </li>
                         <li class="nav-item">
-                            <RouterLink class="nav-link" :to="{ name: 'register' }">Register</RouterLink>
+                            <RouterLink class="nav-link" :to="{ name: 'register' }">Регистрация</RouterLink>
                         </li>
                     </template>
                 </ul>
             </div>
         </nav>
     </header>
-    <Sidebar :active="sidebar" />
+<Sidebar :active="sidebar" />
 </template>
 <style scoped>
 .bi-list {

@@ -99,8 +99,8 @@ async def upload_video(user: Annotated[schemas.User, Depends(dependencies.get_au
         return JSONResponse(content='Video already exists!')
     db_video = crud.upload_video(schemas.VideoUpload(title=video_title, description=video_description),
                                  user)
-    video_upload = await upload_fileobj(video_file.file, 'jurmaev', f'videos/{db_video.id}.mp4', video_file.size)
-    image_upload = await upload_fileobj(image_file.file, 'jurmaev', f'images/{db_video.id}.jpg', image_file.size)
+    video_upload = await upload_fileobj(video_file.file, 'chernyssshev', f'videos/{db_video.id}.mp4', video_file.size)
+    image_upload = await upload_fileobj(image_file.file, 'chernyssshev', f'images/{db_video.id}.jpg', image_file.size)
     if not video_upload or not image_upload:
         return JSONResponse(content='Video upload failed!')
 
@@ -126,7 +126,7 @@ async def get_user_history(user: Annotated[schemas.User, Depends(dependencies.ge
 async def generate_video_link(video_id: int) -> str:
     if crud.get_video_by_id(video_id) is None:
         raise errors.VideoDoesNotExistError
-    link = await create_presigned_url('jurmaev', f'videos/{video_id}.mp4')
+    link = await create_presigned_url('chernyssshev', f'videos/{video_id}.mp4')
     if link is None:
         raise errors.LinkGenerateFailedError
     return link
@@ -259,7 +259,7 @@ async def is_subscribed(user: Annotated[schemas.User, Depends(dependencies.get_a
 @app.post('/upload_profile_pic/', tags=['user'], dependencies=[Depends(dependencies.get_db)])
 async def upload_profile_pic(user: Annotated[schemas.User, Depends(dependencies.get_auth_user)],
                        image_file: UploadFile):
-    image_upload = await upload_fileobj(image_file.file, 'jurmaev', f'profiles/{user.username}.jpg', image_file.size)
+    image_upload = await upload_fileobj(image_file.file, 'chernyssshev', f'profiles/{user.username}.jpg', image_file.size)
     if not image_upload:
         raise errors.S3ClientError
 
